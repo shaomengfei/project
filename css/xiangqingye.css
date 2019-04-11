@@ -63,7 +63,7 @@ header .h-b ul li a:hover{color:#b81b22;border-bottom:5px solid #b81b22;}
 .main .m-c{position: absolute;width:400px;height:400px;border:1px solid #000;margin:0 180px;}
 .main .m-c img{width:400px;height:400px;position: absolute;}
 
-.main .m-c span{position: absolute;left:0px;top: 0;width: 133px;height: 100px;background: rgba(200,200,200,0.6);display: none;}
+.main .m-c span{position: absolute;left:0px;top: 0;width: 100px;height: 100px;background: rgba(200,200,200,0.6);display: none;}
 .main .m-c p{position: absolute;left:0;top:0;right:0;bottom: 0;margin:0;}
 .main .m-y{width:400px;height:400px;position: absolute;left: 830px;top: 312px;overflow: hidden;display: none;border:1px solid #000;z-index: 1;}
 .main .m-y img{position: absolute;width: 1200px;height: 1200px;}
@@ -90,7 +90,7 @@ header .h-b ul li a:hover{color:#b81b22;border-bottom:5px solid #b81b22;}
 
 .main .m-r{position:absolute;width:561px;height:374px;right: 0;}
 .main .m-r .m-r-t{height:53px;}
-.main .m-r .m-r-t span{font-size:18px;}
+.main .m-r .m-r-t span{font-size:18px;color:#f00;}
 .main .m-r .m-r-t a{color:#a10000;margin-left:20px ;}
 .main .m-r .m-r-c{height:50px;}
 .main .m-r .m-r-c .div1{height:80px;}

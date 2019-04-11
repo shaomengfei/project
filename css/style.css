@@ -38,12 +38,35 @@ header .h-b{padding-top:88px;}
 header .h-b a img{float:left;}
 header .h-b ul{}
 
-header .h-b ul li{float:left;height:46px;margin-top:22px;}
-
+header .h-b ul li{float:left;height:46px;margin-top:22px;position: relative;}
 header .h-b ul li a{float:left;width:99px;line-height: 22px;padding: 0px 0px 10px;text-align: center;font-size: 16px;}
-
-
 header .h-b ul li a:hover{color:#b81b22;border-bottom:5px solid #b81b22;}
+header .h-b ul li:nth-child(1) a:hover{color:#b81b22;border: 0;}
+
+
+
+
+header .h-b ul li a dl{position:absolute;border: 1px solid #000;border-bottom:0;z-index: 1;text-align: center;font:14px/30px "";background:#b81b22;color:#fff;display: none;left: -60px;top:46px;}
+header .h-b ul li:hover a dl{display: block;}
+header .h-b ul li a dl dd{width:200px;height: 60px;font:18px/60px "";border-bottom: 1px solid #ccc;}
+header .h-b ul li a dl dd:hover{background:#000 ;}
+
+
+header .h-b ul li a dl dd dl{position:absolute;width:600px;height:365px;top:-1px;border: 1px solid #000;border-left:0;text-align: center;font:14px/30px "";background:#000;color:#fff;left: 200px;}
+
+
+
+header .h-b ul li a dl dd dl dt{display:flex;justify-content:space-around;font: 14px/60px "";}
+header .h-b ul li a dl dd dl dt span{font: 18px/72px "";}
+
+header .h-b ul li:hover a dl dd dl{display: none;}
+
+header .h-b ul li a dl dd:hover dl{display: block;}
+
+
+
+
+
 
 nav{width: 1200px;height: 600px;margin: 20px auto;position: relative;overflow: hidden;}
 nav .imgbox{}

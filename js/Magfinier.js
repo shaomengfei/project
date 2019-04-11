@@ -1,49 +1,39 @@
-
-function Magfinier(){
-//			this.sbox=document.querySelector(".m-c");
-//			this.pbox=this.sbox.children[1];
-//			this.bbox=document.querySelector(".m-y");
-//			this.bimg=this.bbox.children[0];				
+//------------------------------------------------------------------
+		function Magfinier(){
+			this.sbox=document.querySelector(".m-c");
+			this.pbox=this.sbox.children[1];
+			this.bbox=document.querySelector(".m-y");
+			this.bimg=this.bbox.children[0];				
 			
 			this.addEvent();
 		}
 		Magfinier.prototype.addEvent=function(){
 			var that=this;
-			$(".main").on("mouseover",".m-c",function(){
-				that.mc = this;
+			this.sbox.onmouseover=function(){
 				that.show();
-//				console.log(this);
-			})
-			$(".main").on("mouseout",".m-c",function(){
+			}
+			this.sbox.onmouseout=function(){
 				that.hide();
-//				console.log(this);
-			})
-//			this.sbox.onmouseover=function(){
-//				that.show();
-//			}
-//			this.sbox.onmouseout=function(){
-//				that.hide();
-//			}
+			}
 		}
 		Magfinier.prototype.show=function(){
-//			this.pbox.style.display="block";
-//			this.bbox.style.display="block";
-			console.log(this.mc);
+			this.pbox.style.display="block";
+			this.bbox.style.display="block";
 			this.addMove();
 		}
 		
 		Magfinier.prototype.hide=function(){
-//			this.pbox.style.display="none";
-//			this.bbox.style.display="none";
+			this.pbox.style.display="none";
+			this.bbox.style.display="none";
 		}
 		
 		
 		Magfinier.prototype.addMove=function(){
 			var that=this;
-//			this.sbox.onmousemove=function(eve){
-//				var e=eve || window.event;
-//				that.pBoxMove(e)
-//			}
+			this.sbox.onmousemove=function(eve){
+				var e=eve || window.event;
+				that.pBoxMove(e)
+			}
 		}
 		Magfinier.prototype.pBoxMove=function(e){
 			
@@ -51,23 +41,23 @@ function Magfinier(){
 			this.t=e.offsetY-this.pbox.offsetHeight/2
 			if(this.l<0){this.l=0};
 			if(this.t<0){this.t=0};
-//			if(this.l>this.sbox.offsetWidth-this.pbox.offsetWidth){
-//				this.l=this.sbox.offsetWidth-this.pbox.offsetWidth;
-//			}
-//			if(this.t>this.sbox.offsetHeight-this.pbox.offsetHeight){
-//				this.t=this.sbox.offsetHeight-this.pbox.offsetHeight
-//			}
-//			this.pbox.style.left=this.l+"px"
-//			this.pbox.style.top=this.t+"px"
-//			
-//			this.x=this.l/(this.sbox.offsetWidth-this.pbox.offsetWidth)
-//			this.y=this.t/(this.sbox.offsetHeight-this.pbox.offsetHeight)
-//			
+			if(this.l>this.sbox.offsetWidth-this.pbox.offsetWidth){
+				this.l=this.sbox.offsetWidth-this.pbox.offsetWidth;
+			}
+			if(this.t>this.sbox.offsetHeight-this.pbox.offsetHeight){
+				this.t=this.sbox.offsetHeight-this.pbox.offsetHeight
+			}
+			this.pbox.style.left=this.l+"px"
+			this.pbox.style.top=this.t+"px"
+			
+			this.x=this.l/(this.sbox.offsetWidth-this.pbox.offsetWidth)
+			this.y=this.t/(this.sbox.offsetHeight-this.pbox.offsetHeight)
+			
 			this.move();
 		}
 		Magfinier.prototype.move=function(){
-//			this.bimg.style.left=-(this.bimg.offsetWidth-this.bbox.offsetWidth)*this.x+"px"
-//			this.bimg.style.top=-(this.bimg.offsetHeight-this.bbox.offsetHeight)*this.y+"px"
+			this.bimg.style.left=-(this.bimg.offsetWidth-this.bbox.offsetWidth)*this.x+"px"
+			this.bimg.style.top=-(this.bimg.offsetHeight-this.bbox.offsetHeight)*this.y+"px"
 		}
 		
 //		
@@ -165,10 +155,10 @@ function Magfinier(){
         				<span>白色</span>
         			</div>
         			<div class="div5">
-        				<a>
-	        				<input type="button" class="btn1" value="立即购买" />
-	        				<input type="button" class="btn2" value="加入购物车" />
-        				</a>
+        				
+        				<a href="fanke.html"><input type="button" class="btn1" value="立即购买" /></a>
+        				<a href="car.html"><input type="button" class="btn2" value="加入购物车" /></a>
+        				
         			</div>
         		</div>
         		<div class="m-r-b"></div>
@@ -176,6 +166,7 @@ function Magfinier(){
 				}
 			}
 			$(".main").html(str);
+			new Magfinier();
 //			$(".xin").children("ul").children("li").children(".zheng").click(function(){
 //				$.cookie("goods",$(this).attr("index"))
 //				$(location).attr('href', './xiangqingye.html')
@@ -185,7 +176,7 @@ function Magfinier(){
 	}	
 		
 	new xiangqing();
-	new Magfinier();
+
 		
 		
 		
