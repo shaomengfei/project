@@ -65,7 +65,8 @@
 		
 	class xiangqing{
 		constructor(){
-			this.goods()
+			this.goods();
+//			this.addElement();
 		}
 //		商品
 		goods(){
@@ -157,7 +158,7 @@
         			<div class="div5">
         				
         				<a href="fanke.html"><input type="button" class="btn1" value="立即购买" /></a>
-        				<a href="car.html"><input type="button" class="btn2" value="加入购物车" /></a>
+        				<a href="car.html" class="a1" index="${res[i].id}"><input type="button" id="btn" value="加入购物车" /></a>
         				
         			</div>
         		</div>
@@ -166,6 +167,7 @@
 				}
 			}
 			$(".main").html(str);
+			this.addEvent();
 			new Magfinier();
 //			$(".xin").children("ul").children("li").children(".zheng").click(function(){
 //				$.cookie("goods",$(this).attr("index"))
@@ -173,6 +175,54 @@
 //			})
 		
 		}
+//		----------------------
+		addEvent(){
+				var that = this;
+//				console.log($(".m-r-c").children(".div5").children("a").eq())
+				this.cont =document.querySelector(".div5 .a1")
+				this.cont.addEventListener("click",function(eve){
+					if(eve.target.id == "btn"){
+						console.log(this)
+//						6.被点击时,获取货号,存cookie
+						that.id = eve.target.parentNode.getAttribute("index");
+						console.log(that.id)
+						that.setCookie()
+					}
+				})
+			}
+			setCookie(){
+//				因为要使用一条cookie存商品,所以数据选择数组里面放对象[{},{}]
+				this.goods = getCookie("good");
+//				情况1:第一次添加
+				if(this.goods == ""){
+					this.goods = [{
+						id:this.id,
+						num:1
+					}];
+				}else{
+//					情况2:不是第一次添加
+					this.goods = JSON.parse(this.goods);
+//					新情况1：这次点击的是老数据
+					var onoff = true;
+					this.goods.forEach((v)=>{
+						if(v.id == this.id){
+							v.num++
+							onoff = false;
+						}
+					})
+					
+//					新情况2：这次点击的是新数据
+					if(onoff){
+						this.goods.push({
+							id:this.id,
+							num:1
+						})
+					}
+				}
+//				所有关于数组的操作结束之后,将数组转成字符再设置到cookie中
+				setCookie("good",JSON.stringify(this.goods))
+//				console.log(getCookie("good"))
+			}	
 	}	
 		
 	new xiangqing();

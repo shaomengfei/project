@@ -5,6 +5,7 @@
 	class List{
 		constructor(){
 			this.init();
+
 		}
 		init(){
 			var that = this;
