@@ -28,7 +28,7 @@ class Login{
 //								因为接口问题,返回json数据时表示成功,json数据不好判断,所以,直接使用default判断
 								$("span").html("");
 								setTimeout(()=>{
-									location.href = "fanke.html";
+									location.href = "index.html";
 								})
 								break;
 								that.res = JSON.parse(res)
